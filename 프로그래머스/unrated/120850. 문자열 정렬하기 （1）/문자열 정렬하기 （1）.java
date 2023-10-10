@@ -1,17 +1,14 @@
 import java.util.*;
 class Solution {
     public int[] solution(String my_string) {
-        int[] answer = {};
+       
         List<Integer> arr = new ArrayList<Integer>();
         for(int i=0;i<my_string.length();i++){
             if(my_string.charAt(i)-'0' <10){
-                arr.add(Integer.parseInt(String.valueOf(my_string.charAt(i))));
+                arr.add(my_string.charAt(i)-'0');
             }
         }
-        answer = new int[arr.size()];
-        for(int i = 0; i < arr.size(); i++){
-            answer[i] = arr.get(i);
-        }
+    int answer[] = arr.stream().mapToInt(Integer::intValue).toArray();
         
         Arrays.sort(answer);
         
